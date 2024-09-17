@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>profile page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest Profile & Feed</title>
+    <!-- Import Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="/stylesheet/profile.css" />
+  </head>
+  <body>
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-picture">
+        <img
+          src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg"
+          alt="profile"
+        />
+      </div>
+      <div class="profile-info">
+        <h2 class="profile-name">Username</h2>
+        <h3 class="profile-handle">@username</h3>
+        <p class="profile-bio">
+          Designer | Photographer | Dreamer. Sharing my journey one pin at a time.
+        </p>
+        <a href="#" class="profile-button">Account Setup</a>
+      </div>
+    </div>
+
+    <!-- Feed Section -->
+    <div class="feed-grid">
+      <!-- Card 1 -->
+      <div class="feed-card">
+        <img
+          src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
+          alt="feed image"
+        />
+        <div class="feed-card-caption">Beautiful Nature</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feed-card">
+        <img
+        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
+        alt="feed image"
+        />
+        <div class="feed-card-caption">Amazing Architecture</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feed-card">
+        <img
+        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
+        alt="feed image"
+        />
+        <div class="feed-card-caption">Stunning Sunset</div>
+      </div>
+
+      <!-- More Cards -->
+      <!-- Add as many cards as needed -->
+    </div>
+
+    <!-- Link to external JS file -->
+    <script src="/js/profile.js"></script>
+  </body>
 </html>
