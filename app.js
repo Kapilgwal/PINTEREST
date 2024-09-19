@@ -3,6 +3,7 @@ const expressSession = require('express-session')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -13,7 +14,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname,'views'));
 
-
+app.use(flash());
 app.use(expressSession({
     resave : false,
     saveUninitialized : false,

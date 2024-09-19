@@ -15,53 +15,46 @@
   <body>
     <!-- Profile Section -->
     <div class="profile-section">
-      <div class="profile-picture">
-        <img
-          src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg"
-          alt="profile"
-        />
+      <div class="profile-header">
+        <div class="profile-picture">
+          <img
+            src="https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg"
+            alt="profile"
+          />
+        </div>
+        <div class="profile-info">
+          <h2 class="profile-name"><%= user.username %></h2>
+          <h3 class="profile-handle">@<%= user.fullname %></h3>
+          <p class="profile-bio">
+            <%= user.email %> | Passionate about design and creativity. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Amet, libero.
+          </p>
+          <a href="/logout" class="profile-button">Logout</a>
+        </div>
       </div>
-      <div class="profile-info">
-        <h2 class="profile-name">Username</h2>
-        <h3 class="profile-handle">@username</h3>
-        <p class="profile-bio">
-          Designer | Photographer | Dreamer. Sharing my journey one pin at a time.
-        </p>
-        <a href="#" class="profile-button">Account Setup</a>
+
+      <div class="upload-section">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <input
+            type="text"
+            name="fileCaption"
+            placeholder="What's the story behind this post?"
+            class="input-field"
+          />
+          <input type="file" name="file" class="input-field file-upload" required />
+          <button type="submit" class="btn-upload">Upload</button>
+        </form>
       </div>
     </div>
 
     <!-- Feed Section -->
     <div class="feed-grid">
-      <!-- Card 1 -->
-      <div class="feed-card">
-        <img
-          src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
-          alt="feed image"
-        />
-        <div class="feed-card-caption">Beautiful Nature</div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="feed-card">
-        <img
-        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
-        alt="feed image"
-        />
-        <div class="feed-card-caption">Amazing Architecture</div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="feed-card">
-        <img
-        src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
-        alt="feed image"
-        />
-        <div class="feed-card-caption">Stunning Sunset</div>
-      </div>
-
-      <!-- More Cards -->
-      <!-- Add as many cards as needed -->
+      <% user.posts.forEach(function(post) { %>
+        <div class="post-card">
+          <img src="/uploads/<%= post.image %>" alt="Post Image" class="post-image" />
+          <h5 class="post-text"><%= post.postText %></h5>
+        </div>
+      <% }) %>
     </div>
 
     <!-- Link to external JS file -->

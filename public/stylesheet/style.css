@@ -108,3 +108,11 @@ footer hr {
     border: none;
     border-top: 1px solid #ddd;
 }
+
+
+.error{
+    font-weight: 500;
+    color: red;
+    text-transform: capitalize;
+    margin: 5px 7px;
+}
